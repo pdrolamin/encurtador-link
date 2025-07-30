@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>Encurtador de Links</title>
+  </head>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"
+  <body>
+    <div class="d-flex flex-column min-vh-100"> 
+      <div class="container text-center mt-5 flex-grow-1"> 
+      <h1>Pouco Link</h1>
+      <hr class="linha-logo">
+
+      <form method="post" action="{% url 'valida_link' %}">
+        {% csrf_token %}
+        
+      
+        <div class="form-group">
+          <label>Encurte seu link:</label>
+          {{ form.url_original }}
+        </div>
+
+        
+        <button type="submit" class="btn btn-primary btn-brilho">Encurtar Link</button>
+      </form>
+
+      
+      {% if link_gerado %}
+        <div class="alert alert-success mt-4" role="alert">
+        ✅ Link criado com sucesso!<br>
+        <a href="http://127.0.0.1:8000/{{ link_gerado }}" target="_blank">
+        www.poucolink.com/{{ link_gerado }}
+        </a>
+        </div>
+      {% endif %}
+
+
+      
+      {% if erro %}
+        <div class="alert alert-danger mt-4" role="alert">
+          ❌ Não foi possível criar essa URL. Ela já existe.
+        </div>
+      {% endif %}
+    </div>
+     <footer class="text-center py-3 bg-ligth">
+        <hr>
+        © 2025 Pouco Link — Desenvolvido por Pedro Lamin como parte de um projeto educacional. Todos os direitos reservados.
+      </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

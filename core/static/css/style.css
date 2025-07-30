@@ -1,0 +1,63 @@
+body {
+    background-color: 102, 102, 102;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #007bff;
+    text-shadow: 1px 1px 0 rgb(74, 0, 170);
+}
+
+.linha-logo {
+  height: 4px;
+  background: linear-gradient(to right, #0d6efd, #6610f2);
+  border: none;
+  width: 30%;
+  margin: 0 auto 20px auto;
+  border-radius: 4px;
+}
+
+button {
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    
+}
+
+.btn-brilho{
+    background-color: #3910f2;
+    color: white;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.btn-brilho:hover{
+    box-shadow: 0 0 12px #007bff; 0 0 20px #00f7ff;
+    trasnform: scale(1.05);
+}
+
+.btn-brilho:active{
+    transform: scale(0.95);
+    box-shadow: 0 0 5px #007bff;
+}
+
+footer { 
+    
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+
+}
+
+footer hr{
+    height: 4px;
+    background: linear-gradient(to right, #0d6efd, #95c1f0);
+    border: none;
+    margin: 0 auto 20px auto;
+    border-radius: 4px;
+}
